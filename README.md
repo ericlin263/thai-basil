@@ -6,12 +6,12 @@ Live site: https://ericlin263.github.io/thai-basil/
 
 About:
 
-Thai Basil is my parents' restaurant. I built this so they'd have a web presence they actually control — a place where customers can find the menu, the hours, and a phone number without going through a third-party listing.
+Thai Basil is my parents' restaurant. I built this so they'd have a web presence they actually control, a place where customers can find the menu, the hours, and a phone number without going through a third-party listing.
 
 Features
-Filterable menu — category tabs for starters, mains, noodles, and desserts, with dietary tags marking vegetarian, gluten-free, and spicy dishes
-Responsive layout — three-column menu grid on desktop that collapses to a single column, with a slide-in navigation panel below 900px
-Local SEO — JSON-LD structured data so search engines can read the address, hours, and cuisine directly from the page, plus Open Graph tags for link previews
+Filterable menu and category tabs for starters, mains, noodles, and desserts, with dietary tags marking vegetarian, gluten-free, and spicy dishes
+Responsive layout + three-column menu grid on desktop that collapses to a single column, with a slide-in navigation panel below 900px
+Local SEO and JSON-LD structured data so search engines can read the address, hours, and cuisine directly from the page, plus Open Graph tags for link previews
 No dependencies — vanilla HTML, CSS, and JavaScript in one file, no build step or framework
 Built with
 
