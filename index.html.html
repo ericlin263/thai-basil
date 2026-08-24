@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thai Basil — Authentic Thai & Asian Fusion in Colorado Springs</title>
+  <meta name="description" content="Thai Basil serves authentic Thai and Asian fusion cuisine in Colorado Springs. Green curry, pad thai, drunken noodles and more. Dine in or call ahead for pickup." />
+  <link rel="canonical" href="https://[YOUR-DOMAIN]/" />
+
+  <!-- Social sharing -->
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:title" content="Thai Basil — Authentic Thai & Asian Fusion" />
+  <meta property="og:description" content="Southeast Asian tradition meets the Rocky Mountains. Serving Colorado Springs since 2005." />
+  <meta property="og:url" content="https://[YOUR-DOMAIN]/" />
+  <meta property="og:image" content="https://[YOUR-DOMAIN]/preview.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;500&family=Noto+Serif+Thai:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+  <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+  <style>
+    :root {
+      --ink: #0e0c0a;
+      --parchment: #f5f0e8;
+      --gold: #c9a84c;
+      --gold-light: #e4c97e;
+      --emerald: #1a3a2a;
+      --emerald-mid: #2d5c43;
+      --emerald-light: #4a8c66;
+      --red: #8b2e2e;
+      --cream: #faf6ef;
+      --warm-gray: #a09080;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ink);
+      color: var(--parchment);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ─── NOISE TEXTURE OVERLAY ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.35;
+    }
+
+    /* ─── NAV ─── */
+    #nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 4rem;
+      background: linear-gradient(to bottom, rgba(14,12,10,0.95) 0%, transparent 100%);
+      transition: background 0.4s;
+    }
+    #nav.scrolled {
+      background: rgba(14,12,10,0.97);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+    .nav-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .nav-logo span {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      color: var(--warm-gray);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--parchment);
+      text-decoration: none;
+      opacity: 0.75;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; color: var(--gold-light); }
+    .nav-cta {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold) !important;
+      padding: 0.5rem 1.25rem !important;
+      opacity: 1 !important;
+      transition: background 0.3s, color 0.3s !important;
+      border-radius: 1px;
+    }
+    .nav-cta:hover {
+      background: var(--gold) !important;
+      color: var(--ink) !important;
+    }
+
+    /* ─── MOBILE NAV ─── */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 110;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      margin: 6px 0;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(26,58,42,0.6) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 70%, rgba(139,46,46,0.15) 0%, transparent 60%),
+        linear-gradient(160deg, #0e0c0a 0%, #1a1208 40%, #0a1a10 100%);
+    }
+    /* Decorative bamboo lines */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          95deg,
+          transparent 0px,
+          transparent 58px,
+          rgba(201,168,76,0.04) 58px,
+          rgba(201,168,76,0.04) 60px
+        );
+    }
+    .hero-content {
+      position: relative;
+      text-align: center;
+      z-index: 2;
+      padding: 0 2rem;
+    }
+    .hero-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 1s 0.2s forwards;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(4.5rem, 10vw, 9rem);
+      font-weight: 300;
+      line-height: 0.9;
+      letter-spacing: -0.01em;
+      color: var(--parchment);
+      opacity: 0;
+      animation: fadeUp 1s 0.5s forwards;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .hero-title .thai-script {
+      display: block;
+      font-family: 'Noto Serif Thai', serif;
+      font-size: clamp(1.2rem, 3vw, 2.2rem);
+      letter-spacing: 0.15em;
+      color: var(--emerald-light);
+      margin-top: 0.6rem;
+      font-weight: 300;
+    }
+    .hero-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem auto;
+      opacity: 0;
+      animation: fadeUp 1s 0.8s forwards;
+    }
+    .hero-divider::before, .hero-divider::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold));
+    }
+    .hero-divider::after { transform: scaleX(-1); }
+    .hero-divider-icon { color: var(--gold); font-size: 1.2rem; }
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      color: var(--warm-gray);
+      letter-spacing: 0.05em;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 1s 1s forwards;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 1s 1.2s forwards;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--ink);
+      padding: 0.9rem 2.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--parchment);
+      padding: 0.9rem 2.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: 1px solid rgba(245,240,232,0.3);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 1s 1.8s forwards;
+    }
+    .hero-scroll span {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s infinite;
+    }
+
+    /* ─── SECTION BASE ─── */
+    section { position: relative; }
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      line-height: 1.1;
+    }
+
+    /* ─── STORY SECTION ─── */
+    .story {
+      padding: 8rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .story-visual {
+      position: relative;
+    }
+    .story-card {
+      background: linear-gradient(135deg, var(--emerald) 0%, #0f2218 100%);
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 3rem;
+      aspect-ratio: 3/4;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+    }
+    .story-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+    .story-card-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 30% 20%, rgba(74,140,102,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(201,168,76,0.08) 0%, transparent 40%);
+    }
+    .story-card-emoji {
+      position: absolute;
+      top: 2rem; right: 2rem;
+      font-size: 5rem;
+      opacity: 0.4;
+      filter: grayscale(0.3);
+    }
+    .story-card-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.5rem;
+      line-height: 1.5;
+      color: var(--parchment);
+      position: relative;
+      z-index: 1;
+    }
+    .story-card-attr {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    .story-float {
+      position: absolute;
+      bottom: -2rem;
+      right: -2rem;
+      background: var(--red);
+      border: 3px solid var(--ink);
+      padding: 1.2rem 1.5rem;
+      text-align: center;
+    }
+    .story-float strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--parchment);
+      line-height: 1;
+    }
+    .story-float span {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.7);
+    }
+    .story-text .section-title { font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 1.5rem; }
+    .story-text p {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: rgba(245,240,232,0.7);
+      margin-bottom: 1.2rem;
+    }
+    .story-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .pillar {
+      border-left: 2px solid var(--emerald-light);
+      padding-left: 1rem;
+    }
+    .pillar-name {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+    .pillar-desc {
+      font-size: 0.8rem;
+      color: var(--warm-gray);
+      line-height: 1.5;
+    }
+
+    /* ─── MENU SECTION ─── */
+    .menu-section {
+      background: var(--cream);
+      color: var(--ink);
+      padding: 8rem 4rem;
+    }
+    .menu-section .section-label { color: var(--emerald-mid); }
+    .menu-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 4rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .menu-header .section-title { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--ink); }
+    .menu-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .tab {
+      padding: 0.5rem 1.25rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: 1px solid rgba(14,12,10,0.2);
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .tab.active, .tab:hover {
+      background: var(--emerald);
+      color: var(--parchment);
+      border-color: var(--emerald);
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(14,12,10,0.1);
+    }
+    .menu-item {
+      background: var(--cream);
+      padding: 2rem;
+      transition: background 0.3s;
+      cursor: pointer;
+      position: relative;
+    }
+    .menu-item:hover { background: #f0ebe0; }
+    .menu-item-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+      gap: 1rem;
+    }
+    .menu-item-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+    .menu-item-price {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      color: var(--emerald-mid);
+      white-space: nowrap;
+    }
+    .menu-item-desc {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: #6a5a4a;
+    }
+    .menu-item-tags {
+      display: flex;
+      gap: 0.4rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .tag {
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 1px;
+    }
+    .tag-spicy { background: rgba(139,46,46,0.12); color: var(--red); }
+    .tag-veg { background: rgba(45,92,67,0.12); color: var(--emerald-mid); }
+    .tag-new { background: rgba(201,168,76,0.18); color: #8a6a20; }
+    .tag-gf { background: rgba(74,140,102,0.12); color: #2d6644; }
+    .menu-footer {
+      text-align: center;
+      margin-top: 3rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .menu-footer p {
+      font-size: 0.8rem;
+      color: var(--warm-gray);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── ORDER SECTION ─── */
+    .order-section {
+      padding: 8rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .order-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .order-text .section-title { font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 1.5rem; }
+    .order-text p {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: rgba(245,240,232,0.65);
+      margin-bottom: 2rem;
+    }
+    .order-options {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .order-option {
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      cursor: pointer;
+      transition: border-color 0.3s, background 0.3s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .order-option:hover { border-color: var(--gold); background: rgba(201,168,76,0.05); }
+    .order-option-icon { font-size: 2rem; flex-shrink: 0; }
+    .order-option-text strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+    }
+    .order-option-text span {
+      font-size: 0.8rem;
+      color: var(--warm-gray);
+    }
+    .order-option-arrow {
+      margin-left: auto;
+      color: var(--gold);
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .order-option:hover .order-option-arrow { opacity: 1; transform: translateX(4px); }
+
+    .order-option--static { cursor: default; }
+    .order-option--static:hover { border-color: rgba(245,240,232,0.12); background: transparent; }
+    .delivery-partners {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.9rem;
+    }
+    .delivery-partners a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      border: 1px solid rgba(201,168,76,0.35);
+      padding: 0.4rem 0.9rem;
+      border-radius: 1px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .delivery-partners a:hover { background: var(--gold); color: var(--ink); }
+
+    .visit-panel {
+      background: rgba(26,58,42,0.25);
+      border: 1px solid rgba(201,168,76,0.15);
+      padding: 2.5rem;
+      align-self: start;
+    }
+    .visit-phone-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    .visit-phone {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid rgba(201,168,76,0.35);
+      padding-bottom: 0.25rem;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .visit-phone:hover { color: var(--gold-light); border-color: var(--gold-light); }
+    .visit-address {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(245,240,232,0.12);
+    }
+    .visit-address p { font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.75rem; }
+    .visit-address a {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .visit-note {
+      margin-top: 1.5rem;
+      font-size: 0.75rem;
+      font-style: italic;
+      color: var(--warm-gray);
+      line-height: 1.6;
+    }
+
+    /* ─── HOURS & LOCATION ─── */
+    .info-section {
+      background: var(--emerald);
+      padding: 6rem 4rem;
+    }
+    .info-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 4rem;
+    }
+    .info-block .section-label { color: var(--gold-light); margin-bottom: 0.5rem; }
+    .info-block h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      color: var(--parchment);
+    }
+    .hours-list { list-style: none; }
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(245,240,232,0.1);
+      font-size: 0.85rem;
+    }
+    .hours-list li:last-child { border-bottom: none; }
+    .hours-list .day { color: rgba(245,240,232,0.7); }
+    .hours-list .time { color: var(--gold-light); font-family: 'Cinzel', serif; font-size: 0.75rem; }
+    .hours-list .closed { color: rgba(245,240,232,0.3); }
+    .address-block p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(245,240,232,0.75);
+      margin-bottom: 0.75rem;
+    }
+    .address-block a {
+      font-size: 0.75rem;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .address-block a:hover { color: var(--gold-light); }
+    .map-placeholder {
+      background: rgba(14,12,10,0.4);
+      border: 1px solid rgba(201,168,76,0.2);
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      cursor: pointer;
+      transition: border-color 0.3s;
+      text-decoration: none;
+    }
+    .map-placeholder:hover { border-color: var(--gold); }
+    .map-placeholder span {
+      font-size: 2.5rem;
+    }
+    .map-placeholder p {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+    }
+    .contact-links { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.5rem; }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(245,240,232,0.08);
+      text-decoration: none;
+      color: rgba(245,240,232,0.75);
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .contact-link:hover { color: var(--gold-light); }
+    .contact-link-icon { font-size: 1.1rem; width: 1.5rem; text-align: center; }
+    .reserve-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      background: var(--gold);
+      color: var(--ink);
+      padding: 0.9rem 2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .reserve-btn:hover { background: var(--gold-light); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #070605;
+      padding: 4rem;
+      border-top: 1px solid rgba(201,168,76,0.12);
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .footer-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      color: var(--gold);
+    }
+    .footer-logo span {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      color: var(--warm-gray);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer-links a {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy {
+      font-size: 0.7rem;
+      color: rgba(160,144,128,0.5);
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.6; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.1); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s, transform 0.8s;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      #nav { padding: 1.2rem 1.5rem; }
+      .nav-toggle { display: block; }
+      .nav-links {
+        position: fixed;
+        inset: 0 0 0 auto;
+        width: min(78vw, 320px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+        padding: 2rem 2.5rem;
+        background: rgba(14,12,10,0.98);
+        border-left: 1px solid rgba(201,168,76,0.2);
+        transform: translateX(100%);
+        transition: transform 0.35s ease;
+      }
+      .nav-links.open { transform: translateX(0); }
+      .nav-links a { font-size: 0.95rem; }
+      .nav-cta { display: inline-block; margin-top: 0.5rem; }
+      .story { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
+      .menu-section { padding: 5rem 2rem; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .order-section { padding: 5rem 2rem; }
+      .order-grid { grid-template-columns: 1fr; }
+      .info-section { padding: 5rem 2rem; }
+      .info-inner { grid-template-columns: 1fr; gap: 3rem; }
+      footer { padding: 3rem 2rem; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#home" class="nav-logo">Thai Basil<span>Asian Fusion · Colorado Springs</span></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#visit">Visit</a></li>
+      <li><a href="#info">Hours</a></li>
+      <li><a href="tel:+17192681688" class="nav-cta">Call Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Est. 2005 · Colorado Springs</p>
+      <h1 class="hero-title">
+        Thai<br><em>Basil</em>
+        <span class="thai-script">ไทย บาซิล</span>
+      </h1>
+      <div class="hero-divider">
+        <span class="hero-divider-icon">✦</span>
+      </div>
+      <p class="hero-sub">Where Southeast Asian tradition meets the Rocky Mountains</p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn-primary">Explore Menu</a>
+        <a href="#visit" class="btn-secondary">Visit Us</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story reveal" id="story">
+    <div class="story-visual">
+      <div class="story-card">
+        <div class="story-card-pattern"></div>
+        <div class="story-card-emoji">🌿</div>
+        <p class="story-card-quote">"Every dish carries the memory of a grandmother's kitchen and the spirit of the mountains."</p>
+        <p class="story-card-attr">— Chef Ruiteng Lin, Founder</p>
+      </div>
+      <div class="story-float">
+        <strong>20+</strong>
+        <span>Years of Flavor</span>
+      </div>
+    </div>
+    <div class="story-text">
+      <p class="section-label">Our Philosophy</p>
+      <h2 class="section-title">Roots. Spice.<br>& Colorado Air.</h2>
+      <p>Thai Basil was born from a simple belief: that the bold, aromatic traditions of Southeast Asia could find a beautiful new home nestled against the Rockies. We source locally, honor authentically, and cook with everything we have.</p>
+      <p>From slow-braised Thai Curries to wok-kissed pad see ew, every plate is a bridge between two worlds — the ancient flavors of Thailand, Vietnam, and Japan, reimagined for a Colorado table.</p>
+      <div class="story-pillars">
+        <div class="pillar">
+          <p class="pillar-name">Local Sourcing</p>
+          <p class="pillar-desc">Farm-fresh ingredients from Colorado's Front Range, supporting local growers year-round.</p>
+        </div>
+        <div class="pillar">
+          <p class="pillar-name">Authentic Spice</p>
+          <p class="pillar-desc">We import our chilis, lemongrass, and galangal directly from Southeast Asia.</p>
+        </div>
+        <div class="pillar">
+          <p class="pillar-name">Family Recipes</p>
+          <p class="pillar-desc">Third-generation recipes passed down through Chef Niran's family in Chiang Mai.</p>
+        </div>
+        <div class="pillar">
+          <p class="pillar-name">Community First</p>
+          <p class="pillar-desc">Proudly rooted in Colorado Springs since 2005, serving our neighbors every day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu-section reveal" id="menu">
+    <div class="menu-header">
+      <div>
+        <p class="section-label">The Kitchen</p>
+        <h2 class="section-title">Signature Dishes</h2>
+      </div>
+      <div class="menu-tabs">
+        <button class="tab active" data-cat="all" aria-pressed="true">All</button>
+        <button class="tab" data-cat="starters" aria-pressed="false">Starters</button>
+        <button class="tab" data-cat="mains" aria-pressed="false">Mains</button>
+        <button class="tab" data-cat="noodles" aria-pressed="false">Noodles</button>
+        <button class="tab" data-cat="desserts" aria-pressed="false">Desserts</button>
+      </div>
+    </div>
+    <div class="menu-grid" id="menuGrid"></div>
+    <div class="menu-footer">
+      <p>Full menu available in-restaurant. Consuming raw or undercooked foods may increase your risk of foodborne illness.</p>
+      <a href="#visit" class="btn-primary" style="background: var(--emerald); color: var(--parchment);">Plan Your Visit</a>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="order-section reveal" id="visit">
+    <div class="order-grid">
+      <div class="order-text">
+        <p class="section-label">Come See Us</p>
+        <h2 class="section-title">Plan Your Visit</h2>
+        <p>Whether you are settling in for a long dinner or calling ahead on your way home, Thai Basil has been serving Colorado Springs since 2005. Walk-ins are always welcome.</p>
+        <div class="order-options">
+          <a href="tel:+17192681688" class="order-option">
+            <span class="order-option-icon" aria-hidden="true">&#128222;</span>
+            <div class="order-option-text">
+              <strong>Call Ahead for Pickup</strong>
+              <span>Order by phone and pick up in 20&ndash;30 minutes.</span>
+            </div>
+            <span class="order-option-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="#info" class="order-option">
+            <span class="order-option-icon" aria-hidden="true">&#127860;</span>
+            <div class="order-option-text">
+              <strong>Dine In With Us</strong>
+              <span>No reservation needed. Larger parties, give us a call.</span>
+            </div>
+            <span class="order-option-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <div class="order-option order-option--static">
+            <span class="order-option-icon" aria-hidden="true">&#128757;</span>
+            <div class="order-option-text">
+              <strong>Delivery</strong>
+              <span>Available in-house and through our delivery partners.</span>
+              <div class="delivery-partners">
+                <a href="https://www.doordash.com/store/thai-basil-colorado-springs-184814/" target="_blank" rel="noopener">DoorDash</a>
+                <a href="https://www.ubereats.com/store/thai-basil/ZSUn1Vn2UrSaUT4idR03Kg" target="_blank" rel="noopener">Uber Eats</a>
+                <a href="https://www.grubhub.com/restaurant/thai-basil-7882-n-academy-blvd-colorado-springs/270260" target="_blank" rel="noopener">Grubhub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="visit-panel">
+        <p class="section-label">Today</p>
+        <h3 class="visit-phone-label">Call to order or ask about a table</h3>
+        <a href="tel:+17192681688" class="visit-phone">(719) 268-1688</a>
+        <div class="visit-address">
+          <p>7882 N Academy Blvd<br />Colorado Springs, CO 80920</p>
+          <a href="https://maps.app.goo.gl/m5AoHkBGB2qj41Bs7" target="_blank" rel="noopener">Get directions &rarr;</a>
+        </div>
+        <p class="visit-note">Kitchen closes 30 minutes before posted closing time. Closed Mondays.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO -->
+  <section class="info-section reveal" id="info">
+    <div class="info-inner">
+      <div class="info-block">
+        <p class="section-label">Hours</p>
+        <h3>When We're Open</h3>
+        <ul class="hours-list">
+          <li><span class="day">Monday</span><span class="closed">Closed</span></li>
+          <li><span class="day">Tuesday – Thursday</span><span class="time">11am – 9pm</span></li>
+          <li><span class="day">Friday</span><span class="time">11am – 9:30pm</span></li>
+          <li><span class="day">Saturday</span><span class="time">11am – 9:30pm</span></li>
+          <li><span class="day">Sunday</span><span class="time">12pm – 9pm</span></li>
+        </ul>
+        <a href="tel:+17192681688" class="reserve-btn" style="margin-top:1.5rem; display:inline-block">Call to Reserve</a>
+      </div>
+      <div class="info-block">
+        <p class="section-label">Find Us</p>
+        <h3>Location</h3>
+        <div class="address-block">
+          <p>7882 N Academy Blvd<br>Colorado Springs, CO 80920</p>
+          <a href="https://maps.app.goo.gl/m5AoHkBGB2qj41Bs7" target="_blank" rel="noopener">Open in Google Maps →</a>
+        </div>
+        <a href="https://maps.app.goo.gl/m5AoHkBGB2qj41Bs7" target="_blank" rel="noopener" class="map-placeholder">
+          <span aria-hidden="true">📍</span>
+          <p>View on Map</p>
+        </a>
+      </div>
+      <div class="info-block">
+        <p class="section-label">Get in Touch</p>
+        <h3>Contact Us</h3>
+        <div class="contact-links">
+          <a href="tel:+17192681688" class="contact-link">
+            <span class="contact-link-icon" aria-hidden="true">📞</span>
+            (719) 268-1688
+          </a>
+          <a href="mailto:[REAL-EMAIL]" class="contact-link">
+            <span class="contact-link-icon" aria-hidden="true">✉️</span>
+            [REAL-EMAIL]
+          </a>
+          <a href="https://www.instagram.com/co_thaibasil" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-link-icon" aria-hidden="true">📸</span>
+            @co_thaibasil
+          </a>
+          <a href="[REAL-FACEBOOK-URL]" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-link-icon" aria-hidden="true">👥</span>
+            Thai Basil Colorado Springs
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Thai Basil<span>Asian Fusion · Colorado Springs</span></div>
+      <nav class="footer-links">
+        <a href="#story">Story</a>
+        <a href="#menu">Menu</a>
+        <a href="#visit">Visit</a>
+        <a href="#info">Hours</a>
+        <a href="mailto:[REAL-EMAIL]">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2025 Thai Basil. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ─── NAV: shrink on scroll (throttled via rAF) ───
+    const nav = document.getElementById('nav');
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+        ticking = false;
+      });
+    });
+
+    // ─── NAV: mobile toggle ───
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    function setNav(open) {
+      navLinks.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', String(open));
+    }
+    navToggle.addEventListener('click', () => {
+      setNav(navToggle.getAttribute('aria-expanded') !== 'true');
+    });
+    navLinks.addEventListener('click', e => {
+      if (e.target.tagName === 'A') setNav(false);
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') setNav(false);
+    });
+
+    // ─── REVEAL ON SCROLL ───
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);          // reveal once, then stop watching
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
+
+    // ─── MENU DATA ───
+    const menuItems = [
+      { name: 'Thai Spring Rolls (2)', price: '$8', desc: 'Rice paper filled with shrimp, lettuce and rice noodle. Served with Thai peanut sauce.', tags: ['gf'], category: 'starters' },
+      { name: 'Satay Chicken (4)', price: '$8', desc: 'Grilled marinated strips of chicken with Thai peanut sauce.', tags: [], category: 'starters' },
+      { name: 'Thai Spiced Soup', price: '$5', desc: 'The authentic Thai Tom Yum Goong soup with shrimp and all the essential spices.', tags: ['spicy', 'gf'], category: 'starters' },
+      { name: 'Hot and Sour', price: '$4', desc: 'This soup is plenty spicy with tofu, bamboo shoots, carrots, egg and tree mushrooms.', tags: ['gf', 'spicy'], category: 'starters' },
+      { name: 'Green Curry', price: '$18', desc: 'Spicy green curry with bamboo shoots, bell peppers, onions and jalapenos. Served with Jasmine rice.', tags: ['spicy', 'gf'], category: 'mains' },
+      { name: 'Royal Chicken', price: '$18', desc: 'Cashew chicken, Thai style. White meat chicken, cashews, mushrooms, water chestnuts, carrots and bell peppers in sweet soy.', tags: ['gf'], category: 'mains' },
+      { name: 'Szechuan Chicken', price: '$18', desc: 'Spicy wok-tossed chicken with bamboo shoots, onions, carrots, mushrooms and bell peppers in a spicy garlic sauce.', tags: ['gf', 'spicy'], category: 'mains' },
+      { name: 'Thai Basil Vegetables', price: '$18', desc: 'Mixed vegetables and tofu in spicy basil sauce.', tags: ['veg', 'gf', 'spicy'], category: 'mains' },
+      { name: 'Thai Curry Lime Beef', price: '$18', desc: 'Stir-fried beef with bell peppers and onions in curry and fresh lime juice.', tags: [], category: 'mains' },
+      { name: 'Thai Eggplant', price: '$18', desc: 'Beware \u2014 this hot, flavorful dish with basil and mint could be addictive.', tags: ['veg', 'gf', 'spicy'], category: 'mains' },
+      { name: 'Pad Thai', price: '$17', desc: 'Wok-tossed rice noodles, egg, bean sprouts, green onion, topped with crushed peanuts.', tags: ['gf'], category: 'noodles' },
+      { name: 'Pad Se-Lew', price: '$17', desc: 'Flat rice noodles with broccoli, egg and sweet soy sauce.', tags: [], category: 'noodles' },
+      { name: 'Drunken Noodles', price: '$17', desc: 'Flat rice noodles with basil, bean sprouts and green onions.', tags: ['spicy', 'new'], category: 'noodles' },
+      { name: 'Mango Sticky Rice', price: '$8', desc: 'Glutinous rice steamed in sweetened coconut milk, served warm against cool slices of ripe red mango, finished with salted coconut cream.', tags: ['veg', 'gf', 'new'], category: 'desserts' },
+      { name: 'Green Tea Ice Cream', price: '$8', desc: 'Smooth matcha, grassy and lightly bitter, with a clean sweet finish.', tags: ['veg', 'gf', 'new'], category: 'desserts' },
+    ];
+
+
+    const TAG_LABELS = {
+      veg:   '\u{1F331} Veg',
+      spicy: '\u{1F336} Spicy',
+      gf:    'GF',
+      new:   '\u2726 New'
+    };
+
+    const grid = document.getElementById('menuGrid');
+
+    function renderMenu(filter) {
+      const items = filter === 'all'
+        ? menuItems
+        : menuItems.filter(i => i.category === filter);
+
+      // Build with DOM APIs rather than innerHTML — no escaping concerns,
+      // and menu text can safely contain quotes or angle brackets.
+      const frag = document.createDocumentFragment();
+
+      for (const item of items) {
+        const card = document.createElement('div');
+        card.className = 'menu-item';
+
+        const top = document.createElement('div');
+        top.className = 'menu-item-top';
+
+        const name = document.createElement('p');
+        name.className = 'menu-item-name';
+        name.textContent = item.name;
+
+        const price = document.createElement('p');
+        price.className = 'menu-item-price';
+        price.textContent = item.price;
+
+        top.append(name, price);
+
+        const desc = document.createElement('p');
+        desc.className = 'menu-item-desc';
+        desc.textContent = item.desc;
+
+        const tags = document.createElement('div');
+        tags.className = 'menu-item-tags';
+        for (const t of item.tags) {
+          const tag = document.createElement('span');
+          tag.className = 'tag tag-' + t;
+          tag.textContent = TAG_LABELS[t] || t;
+          tags.appendChild(tag);
+        }
+
+        card.append(top, desc, tags);
+        frag.appendChild(card);
+      }
+
+      grid.replaceChildren(frag);
+    }
+
+    // ─── MENU FILTER: one delegated listener, no inline handlers ───
+    document.querySelector('.menu-tabs').addEventListener('click', e => {
+      const btn = e.target.closest('.tab');
+      if (!btn) return;
+      document.querySelectorAll('.tab').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+      renderMenu(btn.dataset.cat);
+    });
+
+    renderMenu('all');
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Thai Basil",
+  "description": "Authentic Thai and Asian fusion cuisine in Colorado Springs, serving since 2005.",
+  "servesCuisine": ["Thai", "Asian Fusion"],
+  "priceRange": "$$",
+  "url": "https://[YOUR-DOMAIN]/",
+  "telephone": "+17192681688",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "7882 N Academy Blvd",
+    "addressLocality": "Colorado Springs",
+    "addressRegion": "CO",
+    "postalCode": "80920",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday"], "opens": "11:00", "closes": "21:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday",   "opens": "11:00", "closes": "21:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "11:00", "closes": "21:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday",   "opens": "12:00", "closes": "21:00" }
+  ]
+}
+</script>
+</body>
+</html>
